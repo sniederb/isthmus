@@ -20,19 +20,15 @@ pipeline {
     stages {
     	stage('Build and test') {
             steps {
-            	script {
-                    def exitCode = sh(script: "mvn clean verify -U", returnStatus: true)
-                    echo "Exit code: ${exitCode}"
-                    if (exitCode != 0) {
-                        currentBuild.result = "UNSTABLE"
-                    }
-                }
-                junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
+            	sh 'mvn clean verify -U'
             }
         }
     }
     
     post {
+        always {
+        	junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
+        }
         unstable {
             emailext body: '''${SCRIPT, template="junit-standard.html.template"}''', 
             subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
