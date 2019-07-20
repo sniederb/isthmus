@@ -27,7 +27,7 @@ pipeline {
                         currentBuild.result = "UNSTABLE"
                     }
                 }
-                junit allowEmptyResults: true, testResults: 'target/surefire-reports/**/*.xml'
+                junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
             }
         }
     }
