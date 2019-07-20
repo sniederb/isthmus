@@ -1,0 +1,7 @@
+spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+internal:
+  userproperties-path: config/devtaskhub.yml

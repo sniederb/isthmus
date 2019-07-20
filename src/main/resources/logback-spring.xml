@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<define name="jarLocation" class="ch.want.devtaskhub.ApplicationRootLocator"/>
+    <springProfile name="workspace">
+        <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+        <logger name="org.springframework" level="INFO" />
+        <logger name="org.springframework.web.servlet" level="DEBUG" />
+        <logger name="org.springframework.security.web" level="DEBUG" />
+        <logger name="org.apache.http" level="DEBUG" />
+	    <logger name="ch.want.devtaskhub" level="DEBUG" />
+    </springProfile>
+    
+	<springProfile name="!workspace">
+	    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	    <property name="LOG_FILE" value="${jarLocation}/isthmus.log}"/>
+	    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+	    <root level="INFO">
+	        <appender-ref ref="FILE" />
+	    </root>
+    
+	    <logger name="org.springframework" level="INFO" />
+	    <logger name="org.apache.http" level="INFO" />
+	    <logger name="ch.want.devtaskhub" level="INFO" />
+	</springProfile>
+
+ </configuration>

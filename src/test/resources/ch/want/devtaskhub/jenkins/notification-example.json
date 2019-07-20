@@ -1,0 +1,27 @@
+{
+	"name": "funnel-pipeline",
+	"display_name": "funnel-pipeline",
+	"url": "job/funnel-pipeline/",
+	"build": {
+		"full_url": "https://www.want.ch/jenkins/job/funnel-pipeline/163/",
+		"number": 163,
+		"queue_id": 110,
+		"timestamp": 1533280263560,
+		"phase": "COMPLETED",
+		"status": "FAILURE",
+		"url": "job/funnel-pipeline/163/",
+		"scm": {
+			"changes": [],
+			"culprits": []
+		},
+		"parameters": {
+			"PARAM_DEFAULT_LOCALE": "en",
+			"PARAM_SPRING_PROFILE": "purple",
+			"DO_RELEASE": "false"
+		},
+		"log": "",
+		"artifacts": {
+			
+		}
+	}
+}

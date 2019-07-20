@@ -1,0 +1,21 @@
+PUT rest/api/2/issue/{key}
+{
+	"update": {
+		"fixVersions": [{
+			"set": [{
+				"name": "My Version"
+			}]
+		}]
+	}
+}
+
+or
+{
+	"update": {
+		"fixVersions": [{
+			"add": {
+				"name": "My Version"
+			}
+		}]
+	}
+}

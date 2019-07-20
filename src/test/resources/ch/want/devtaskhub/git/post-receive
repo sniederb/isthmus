@@ -1,0 +1,13 @@
+#!/bin/bash
+echo 'Running GIT hook' >> /home/git/git-hooks.log
+
+read oldrev newrev _branch
+branch=$(echo $_branch | sed 's/.*\/\([a-z0-9][a-z0-9]*\)$/\1/')
+commit_message=$(git log -1 --pretty=format:'%h %cn: %s%b' $newrev)
+
+echo "Commit message: $commit_message" >> /home/git/git-hooks.log
+
+# --data implies a POST
+curl --header 'Content-Type: application/json' --data "$commit_message" http://localhost:8087/devtaskhub/webhooks/git &
+
+echo 'Done' >> /home/git/git-hooks.log

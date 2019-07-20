@@ -1,0 +1,1224 @@
+{
+	"expand": "schema,names",
+	"startAt": 0,
+	"maxResults": 50,
+	"total": 8,
+	"issues": [{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "13104",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/13104",
+		"key": "FUN-176",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10003",
+				"id": "10003",
+				"description": "A task that needs to be done.",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10702&avatarType=issuetype",
+				"name": "Task",
+				"subtask": false,
+				"avatarId": 10702
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": null,
+			"description": "Login to https://www.funnel.travel/purple/ using a user with locale 'de'. The page loads, then reloads again. Repeat.\r\n\r\nIn corporateidentity.service.ts, the \r\n{code:javascript}\r\n@Inject( LOCALE_ID ) protected localeId: string\r\n{code}\r\nis set to \"en-US\" even though the AOT locale is \"de\".\r\n\r\n{quote}\r\nAngular comes in our help with a LOCALE_ID opaque token that can be injected and it gets the same value that you pass to the ng serve command with the --locale parameter.\r\n{quote}\n\n*LOCALE_ID might be a JIT - only thing. Look at https://angular.io/guide/i18n#setting-up-locale, and check the mentioned prod build options.*\r\n\r\nFrom the buildsystem:\r\n\r\n{noformat}\r\nng build --prod --configuration=purple --base-href /purple/de/ --i18n-file=src/i18n/messages.de.xlf --i18n-format=xlf --i18n-locale=de --output-path=dist/de\r\n..\r\n09:39:58 + rsync -arh --delete /var/lib/jenkins/workspace/funnel-pipeline/webclient/dist/de/ /var/www/funnel.travel/public_html/purple/de/ --delete\r\n{noformat}",
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i0008l:i4k",
+			"aggregatetimeestimate": null,
+			"resolutiondate": null,
+			"workratio": -1,
+			"summary": "Switching locale in endless-loop",
+			"lastViewed": "2018-07-06T19:43:00.682+0200",
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-176/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2018-07-06T19:35:58.000+0200",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/2",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/major.svg",
+				"name": "High",
+				"id": "2"
+			},
+			"customfield_10100": null,
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": null,
+			"aggregatetimeoriginalestimate": null,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-176/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-07-20T18:18:01.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "13001",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/13001",
+		"key": "FUN-168",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10004",
+				"id": "10004",
+				"description": "The sub-task of the issue",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+				"name": "Sub-task",
+				"subtask": true,
+				"avatarId": 10316
+			},
+			"parent": {
+				"id": "10733",
+				"key": "FUN-58",
+				"self": "https://www.want.ch/jira/rest/api/2/issue/10733",
+				"fields": {
+					"summary": "Display trip on UI",
+					"status": {
+						"self": "https://www.want.ch/jira/rest/api/2/status/10100",
+						"description": "Task has been analyzed and is ready to implement",
+						"iconUrl": "https://www.want.ch/jira/images/icons/statuses/generic.png",
+						"name": "Ready to implement",
+						"id": "10100",
+						"statusCategory": {
+							"self": "https://www.want.ch/jira/rest/api/2/statuscategory/2",
+							"id": 2,
+							"key": "new",
+							"colorName": "blue-gray",
+							"name": "To Do"
+						}
+					},
+					"priority": {
+						"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+						"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+						"name": "Medium",
+						"id": "3"
+					},
+					"issuetype": {
+						"self": "https://www.want.ch/jira/rest/api/2/issuetype/10001",
+						"id": "10001",
+						"description": "Created by JIRA Software - do not edit or delete. Issue type for a user story.",
+						"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10701&avatarType=issuetype",
+						"name": "Story",
+						"subtask": false,
+						"avatarId": 10701
+					}
+				}
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": null,
+			"description": "Define and implement \"travel service\" section. Focus is on the itinerary, what the traveller will be doing.\r\n\r\nRead-only fields:\r\n* ...",
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i0008l:i4m",
+			"aggregatetimeestimate": null,
+			"resolutiondate": null,
+			"workratio": -1,
+			"summary": "Trip UI: Display travel services",
+			"lastViewed": "2018-07-20T18:17:53.534+0200",
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-168/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2018-07-01T11:34:14.000+0200",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10100": null,
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": null,
+			"aggregatetimeoriginalestimate": null,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-168/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-07-20T18:17:57.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "12713",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/12713",
+		"key": "FUN-157",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10004",
+				"id": "10004",
+				"description": "The sub-task of the issue",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+				"name": "Sub-task",
+				"subtask": true,
+				"avatarId": 10316
+			},
+			"parent": {
+				"id": "10733",
+				"key": "FUN-58",
+				"self": "https://www.want.ch/jira/rest/api/2/issue/10733",
+				"fields": {
+					"summary": "Display trip on UI",
+					"status": {
+						"self": "https://www.want.ch/jira/rest/api/2/status/10100",
+						"description": "Task has been analyzed and is ready to implement",
+						"iconUrl": "https://www.want.ch/jira/images/icons/statuses/generic.png",
+						"name": "Ready to implement",
+						"id": "10100",
+						"statusCategory": {
+							"self": "https://www.want.ch/jira/rest/api/2/statuscategory/2",
+							"id": 2,
+							"key": "new",
+							"colorName": "blue-gray",
+							"name": "To Do"
+						}
+					},
+					"priority": {
+						"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+						"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+						"name": "Medium",
+						"id": "3"
+					},
+					"issuetype": {
+						"self": "https://www.want.ch/jira/rest/api/2/issuetype/10001",
+						"id": "10001",
+						"description": "Created by JIRA Software - do not edit or delete. Issue type for a user story.",
+						"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10701&avatarType=issuetype",
+						"name": "Story",
+						"subtask": false,
+						"avatarId": 10701
+					}
+				}
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": 28800,
+			"description": "On load:\r\n* load all present custom fields (regardless of directives)\r\n* Add all mandatory and optional fields\r\n\r\nOn save:\r\n* Validate all mandatory fields are populated",
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i0008l:i4o",
+			"aggregatetimeestimate": 28800,
+			"resolutiondate": null,
+			"workratio": 0,
+			"summary": "Add edit section for custom fields",
+			"lastViewed": "2018-07-06T09:15:48.036+0200",
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-157/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2018-05-21T15:09:42.000+0200",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 28800,
+				"percent": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10100": null,
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": 28800,
+			"aggregatetimeoriginalestimate": 28800,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 28800,
+				"percent": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-157/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-07-06T09:15:48.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "11603",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/11603",
+		"key": "FUN-113",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10006",
+				"id": "10006",
+				"description": "A problem which impairs or prevents the functions of the product.",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10700&avatarType=issuetype",
+				"name": "Bug",
+				"subtask": false,
+				"avatarId": 10700
+			},
+			"components": [],
+			"timespent": 3600,
+			"timeoriginalestimate": 14400,
+			"description": "*This task summarizes common Angular errors and their most likely resoltion.*\r\n\r\nh4. Unexpected directive\r\n{noformat}Unexpected directive 'MatProgressSpinner' imported by the module 'SharedModule'. Please add a @NgModule annotation.{noformat}\r\n\r\nIndividual class imported, instead of (correct) the module (here: MatProgressSpinnerModule)\r\n\r\nh4. Can't call method on  undefined\r\n{noformat}Failed: Can't call method on  undefined\r\n        exports@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:1116:70\r\n        exports@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:2600:24\r\n        keys@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:4135:26\r\n        patchValue@http://localhost:9876/_karma_webpack_/vendor.bundle.js:91390:20\r\n        http://localhost:9876/_karma_webpack_/main.bundle.js:1829:54{noformat}\r\n\r\nKarma/Jasmine will send \"undefined\" in Store dispatches. If the code has a store subscription and passes the updated value to myFormGroup.patchValue(), Angular will encounter above error.\r\n\r\nh4. ng lint doesn't check any files\r\n\r\nangular-cli.json defines 'lint' projects, such as\r\n{code:json}\r\n\"lint\": [\r\n    {\r\n      \"files\": \"src/**/*.ts\",\r\n      \"project\": \"src/tsconfig.json\"\r\n    },\r\n...]\r\n{code}\r\n\r\nIn order to run lint properly, the current directory must be ./funnel/webclient/\r\n\r\nh4. spec.ts fails with \"Can't bind to 'formGroup' since it isn't a known property of 'div'\"\r\n\r\nNeed to \r\n{code:javascript}\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\n...\r\nimports: [ ReactiveFormsModule ],\r\n{code}\r\n\r\nh4. TypeError: Unexpected type 'undefined' in select operator, expected 'string' or 'function' \r\n\r\nIn the stacktrace, look for a method name used in the component (often 'ngOnInit'). The line above in the stacktrace should help identify which line of code is causing the issue. In the example case here, the line\r\n{code}\r\nthis.store.select( this.storeKey )\r\n{code}\r\nwas attempting a store.select with an 'undefined' storeKey.\r\n\r\n\r\nh4. EXCEPTION: No provider for t! in production build only\r\n\r\nError occurs in AOT --prod builds only, just as described in [this issue|https://github.com/angular/angular-cli/issues/4752] or [this one|https://github.com/angular/angular-cli/issues/5673]\r\n\r\n# Run \"ng serve --aot\" locally. This will *not* minify the code, thus allowing to localize the culprit\r\n\r\nIn this case:\r\n{noformat}\r\nUncaught Error: StaticInjectorError(AppModule)[CorporateIdentityService -> LoggerService]: \r\n  StaticInjectorError(Platform: core)[CorporateIdentityService -> LoggerService]: \r\n    NullInjectorError: No provider for LoggerService!\r\n    at _NullInjector.get (core.js:994)\r\n{noformat}\r\n\r\n\r\n",
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": 3600,
+			"resolution": null,
+			"customfield_10005": "0|i000k7:",
+			"aggregatetimeestimate": 0,
+			"resolutiondate": null,
+			"workratio": 25,
+			"summary": "Common Angular error messages",
+			"lastViewed": null,
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-113/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2017-12-15T09:15:18.000+0100",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": "FUN-9",
+			"aggregateprogress": {
+				"progress": 3600,
+				"total": 3600,
+				"percent": 100
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10100": [{
+				"self": "https://www.want.ch/jira/rest/api/2/customFieldOption/10100",
+				"value": "Impediment",
+				"id": "10100"
+			}],
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": 0,
+			"aggregatetimeoriginalestimate": 14400,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 3600,
+				"total": 3600,
+				"percent": 100
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-113/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-04-24T09:55:32.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "10720",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/10720",
+		"key": "FUN-45",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10000",
+				"id": "10000",
+				"description": "Created by JIRA Software - do not edit or delete. Issue type for a big user story that needs to be broken down.",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10705&avatarType=issuetype",
+				"name": "Epic",
+				"subtask": false,
+				"avatarId": 10705
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": null,
+			"description": null,
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i000bz:",
+			"customfield_10006": null,
+			"aggregatetimeestimate": null,
+			"resolutiondate": null,
+			"workratio": -1,
+			"summary": "Project administration",
+			"lastViewed": null,
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-45/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2017-06-28T20:23:30.000+0200",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10001": {
+				"self": "https://www.want.ch/jira/rest/api/2/customFieldOption/10000",
+				"value": "To Do",
+				"id": "10000"
+			},
+			"customfield_10100": null,
+			"customfield_10002": "Project administration",
+			"customfield_10003": "ghx-label-7",
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": null,
+			"aggregatetimeoriginalestimate": null,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-45/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-06-08T18:42:49.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "10715",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/10715",
+		"key": "FUN-40",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10000",
+				"id": "10000",
+				"description": "Created by JIRA Software - do not edit or delete. Issue type for a big user story that needs to be broken down.",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10705&avatarType=issuetype",
+				"name": "Epic",
+				"subtask": false,
+				"avatarId": 10705
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": null,
+			"description": null,
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i000br:",
+			"customfield_10006": null,
+			"aggregatetimeestimate": null,
+			"resolutiondate": null,
+			"workratio": -1,
+			"summary": "Environment and tools",
+			"lastViewed": null,
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-40/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2017-06-28T20:06:01.000+0200",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10001": {
+				"self": "https://www.want.ch/jira/rest/api/2/customFieldOption/10000",
+				"value": "To Do",
+				"id": "10000"
+			},
+			"customfield_10100": null,
+			"customfield_10002": "Environment",
+			"customfield_10003": "ghx-label-5",
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": null,
+			"aggregatetimeoriginalestimate": null,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-40/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-06-06T07:12:25.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "10602",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/10602",
+		"key": "FUN-23",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10000",
+				"id": "10000",
+				"description": "Created by JIRA Software - do not edit or delete. Issue type for a big user story that needs to be broken down.",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10705&avatarType=issuetype",
+				"name": "Epic",
+				"subtask": false,
+				"avatarId": 10705
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": null,
+			"description": null,
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i0007z:",
+			"customfield_10006": null,
+			"aggregatetimeestimate": null,
+			"resolutiondate": null,
+			"workratio": -1,
+			"summary": "Tutorials",
+			"lastViewed": null,
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-23/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2017-06-28T18:56:15.000+0200",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10001": {
+				"self": "https://www.want.ch/jira/rest/api/2/customFieldOption/10000",
+				"value": "To Do",
+				"id": "10000"
+			},
+			"customfield_10100": null,
+			"customfield_10002": "Tutorials",
+			"customfield_10003": "ghx-label-3",
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": null,
+			"aggregatetimeoriginalestimate": null,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-23/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2017-07-17T20:01:41.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	},
+	{
+		"expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+		"id": "10101",
+		"self": "https://www.want.ch/jira/rest/api/2/issue/10101",
+		"key": "FUN-7",
+		"fields": {
+			"issuetype": {
+				"self": "https://www.want.ch/jira/rest/api/2/issuetype/10000",
+				"id": "10000",
+				"description": "Created by JIRA Software - do not edit or delete. Issue type for a big user story that needs to be broken down.",
+				"iconUrl": "https://www.want.ch/jira/secure/viewavatar?size=xsmall&avatarId=10705&avatarType=issuetype",
+				"name": "Epic",
+				"subtask": false,
+				"avatarId": 10705
+			},
+			"components": [],
+			"timespent": null,
+			"timeoriginalestimate": null,
+			"description": "This epic covers the basic setup of technologies, up to the point where a user can login. User management etc. is NOT part of this epic.",
+			"project": {
+				"self": "https://www.want.ch/jira/rest/api/2/project/10002",
+				"id": "10002",
+				"key": "FUN",
+				"name": "Funnel",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/projectavatar?pid=10002&avatarId=10600",
+					"24x24": "https://www.want.ch/jira/secure/projectavatar?size=small&pid=10002&avatarId=10600",
+					"16x16": "https://www.want.ch/jira/secure/projectavatar?size=xsmall&pid=10002&avatarId=10600",
+					"32x32": "https://www.want.ch/jira/secure/projectavatar?size=medium&pid=10002&avatarId=10600"
+				}
+			},
+			"fixVersions": [],
+			"aggregatetimespent": null,
+			"resolution": null,
+			"customfield_10005": "0|i0002n:",
+			"customfield_10006": null,
+			"aggregatetimeestimate": null,
+			"resolutiondate": null,
+			"workratio": -1,
+			"summary": "Basic technology stack",
+			"lastViewed": null,
+			"watches": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-7/watchers",
+				"watchCount": 1,
+				"isWatching": true
+			},
+			"creator": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"subtasks": [],
+			"created": "2016-12-23T09:40:34.000+0100",
+			"reporter": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"customfield_10000": null,
+			"aggregateprogress": {
+				"progress": 0,
+				"total": 0
+			},
+			"priority": {
+				"self": "https://www.want.ch/jira/rest/api/2/priority/3",
+				"iconUrl": "https://www.want.ch/jira/images/icons/priorities/medium.svg",
+				"name": "Medium",
+				"id": "3"
+			},
+			"customfield_10001": {
+				"self": "https://www.want.ch/jira/rest/api/2/customFieldOption/10000",
+				"value": "To Do",
+				"id": "10000"
+			},
+			"customfield_10100": null,
+			"customfield_10002": "Technology stack",
+			"customfield_10003": "ghx-label-2",
+			"labels": [],
+			"customfield_10004": null,
+			"environment": null,
+			"timeestimate": null,
+			"aggregatetimeoriginalestimate": null,
+			"versions": [],
+			"duedate": null,
+			"progress": {
+				"progress": 0,
+				"total": 0
+			},
+			"issuelinks": [],
+			"votes": {
+				"self": "https://www.want.ch/jira/rest/api/2/issue/FUN-7/votes",
+				"votes": 0,
+				"hasVoted": false
+			},
+			"assignee": {
+				"self": "https://www.want.ch/jira/rest/api/2/user?username=sniederb",
+				"name": "sniederb",
+				"key": "sniederb",
+				"emailAddress": "simon.niederberger@want.ch",
+				"avatarUrls": {
+					"48x48": "https://www.want.ch/jira/secure/useravatar?ownerId=sniederb&avatarId=10502",
+					"24x24": "https://www.want.ch/jira/secure/useravatar?size=small&ownerId=sniederb&avatarId=10502",
+					"16x16": "https://www.want.ch/jira/secure/useravatar?size=xsmall&ownerId=sniederb&avatarId=10502",
+					"32x32": "https://www.want.ch/jira/secure/useravatar?size=medium&ownerId=sniederb&avatarId=10502"
+				},
+				"displayName": "Simon Niederberger",
+				"active": true,
+				"timeZone": "Europe/Zurich"
+			},
+			"updated": "2018-05-04T09:29:20.000+0200",
+			"status": {
+				"self": "https://www.want.ch/jira/rest/api/2/status/3",
+				"description": "This issue is being actively worked on at the moment by the assignee.",
+				"iconUrl": "https://www.want.ch/jira/images/icons/statuses/inprogress.png",
+				"name": "Implementing",
+				"id": "3",
+				"statusCategory": {
+					"self": "https://www.want.ch/jira/rest/api/2/statuscategory/4",
+					"id": 4,
+					"key": "indeterminate",
+					"colorName": "yellow",
+					"name": "In Progress"
+				}
+			}
+		}
+	}]
+}

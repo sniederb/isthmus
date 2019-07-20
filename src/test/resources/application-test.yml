@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: workspace
+    
+internal:
+  userproperties-path: classpath:settings/devtaskhub.yml

@@ -1,0 +1,17 @@
+untouched: true
+email: foobar@isthmus.want.ch
+licenseKey: 123456
+username: admin
+password: admin
+webhookRules:
+- payloadTemplate: null
+  payloadPath: ""
+  endpoint:
+    url: "http://localhost:8080/webhooks/other"
+    httpMethod: "POST"
+    username: "simon"
+    password: "hello"
+  hookname: "jenkins"
+  filterExpressionType: "REGEXP"
+  filterExpression: ""
+scheduledRules: []

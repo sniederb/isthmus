@@ -1,0 +1,6 @@
+{
+    "text": "Tasks in progress for tomorrow:\n<#list issues as issue><${issue.self}|${issue.key} - ${issue.fields.summary}>\n</#list>",
+    "username" : "funnel.travel JIRA",
+    "icon_emoji" : ":heavy_exclamation_mark:", 
+    "channel" : "buildsystem"
+}

@@ -1,0 +1,48 @@
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#webhookRulesList > div:nth-child(even), #scheduledRuleConfiguration > div:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+fieldset.form-group {
+  padding: 30px;
+  border: 1px solid gray;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;	
+  border-radius:8px;	 
+}
+
+fieldset.form-group legend {
+  width: auto;
+  margin-left:16px;
+  margin-right:16px;
+  color: gray;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.license-card {
+  background-color: #7dc5ee29;
+  width: 400px;
+  
+}
+
+#console {
+  border: 1px solid gray;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;	
+  border-radius:8px;
+  padding: 10px;
+  background-color: black;
+  color: green;
+  font-family: monospace;
+}
+
+@media screen and (min-width: 480px) {
+  #console {
+    white-space: pre;
+  }
+}

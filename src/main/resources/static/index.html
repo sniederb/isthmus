@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Isthmus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link href="//stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="//use.fontawesome.com/releases/v5.1.1/css/all.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script> 
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="assets/isthmus.js"></script>
+</head>
+<body>
+
+  <div class="jumbotron">
+    <h1 class="display-3">Isthmus &ndash; connecting REST APIs</h1>
+  </div>
+  <form id="userSettingsForm">
+    
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h4 class="card-title" data-toggle="collapse" data-target="#licenseConfiguration" aria-expanded="true" aria-controls="licenseConfiguration">
+              <i id="licenseConfigurationCollapseIndicator" class="fas fa-angle-right"></i>
+              License and access
+              <i id="licenseKeyOk" class="fas fa-check-circle"></i>
+              <i style="display:none" id="licenseKeyNotOk" class="fas fa-exclamation-triangle"></i>
+            </h4>
+            <div class="card-text collapse show" id="licenseConfiguration">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-3">Your email</div>
+                  <div class="col-md-9"><input name="email" class="form-control" type="email"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">&nbsp;</div>
+                    <div class="col-md-9"><span class="small text-muted">Without an email address you can still configure Isthmus, but the rule engine will be off.</span></div>
+                  </div>
+                <div class="row">
+                  <div class="col-md-3">License key</div>
+                  <div class="col-md-9"><input name="licenseKey" class="form-control"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <div id="licenseOk"><span></span>&nbsp;<i class="fas fa-check-circle"></i></div>
+                    <div id="licenseNeedsAttention"><span></span>&nbsp;<i class="fas fa-exclamation-triangle"></i></div>
+                    
+                    <div class="need-license" style="display: none">
+                      <div>
+                        <button type="button" class="btn btn-primary" onclick="isthmus.purchase();">
+                        Get a license key
+                        </button>
+                        for a one-time charge of <span id="currency"></span> <span id="license-cost"></span>.
+                      </div>
+                      <div id="licenseErrorMessage"></div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <fieldset class="form-group">
+                  <legend>Protect this configuration page with basic authentication</legend>
+                  <div class="row">
+                    <div class="col-md-3">Username</div>
+                    <div class="col-md-9"><input name="username" class="form-control"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">Password</div>
+                    <div class="col-md-9"><input name="password" type="password" class="form-control"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">&nbsp;</div>
+                    <div class="col-md-9"><span class="small text-muted">Restart to apply changes of username and/or password.</span></div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h4 class="card-title" data-toggle="collapse" data-target="#webhookConfiguration" aria-expanded="false" aria-controls="webhookConfiguration">
+              <i id="webhookConfigurationCollapseIndicator" class="fas fa-angle-right"></i>
+              Your webhooks
+            </h4>
+            <div class="card-text collapse" id="webhookConfiguration">
+              <div id="webhookRulesList">
+              </div>
+              <button type="button" class="btn btn-default" id="addNewWebhook">
+                <i class="fas fa-plus-circle"></i> 
+              </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h4 class="card-title" data-toggle="collapse" data-target="#scheduledRuleConfiguration" aria-expanded="false" aria-controls="scheduledRuleConfiguration">
+              <i id="scheduledRuleConfigurationCollapseIndicator" class="fas fa-angle-right"></i>
+              Your scheduled rules
+            </h4>
+            <div class="card-text collapse" id="scheduledRuleConfiguration">
+              <div id="scheduledRulesList">
+              </div>
+              <button type="button" class="btn btn-default" id="addNewScheduledRule">
+                <i class="fas fa-plus-circle"></i> 
+              </button>
+            </div>
+        </div>
+    </div>
+  </form>  
+    
+  <div class="card" style="width: 100%;">
+      <div class="card-body">
+          <h4 class="card-title" data-toggle="collapse" data-target="#tryOutSection" aria-expanded="false" aria-controls="tryOutSection">
+            <i id="tryOutSectionCollapseIndicator" class="fas fa-angle-right"></i>
+            Try it now
+          </h4>
+          <div class="card-text collapse" id="tryOutSection">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">POST</div>
+                <div class="col-md-4"><textarea name="tryOutPayload" class="form-control"></textarea></div>
+                <div class="col-md-2">to</div>
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <span class="input-group-addon">/webhooks/</span>
+                    <select name="tryOutHookname" class="form-control"></select>
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button type="button" class="btn btn-default" id="tryOutManualWebhook">
+                    <i class="fas fa-step-forward"></i> 
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">Run now</div>
+                <div class="col-md-4"><select name="tryOutCron" class="form-control"></select></div>
+                <div class="col-md-2">&nbsp;</div>
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-1">
+                  <button type="button" class="btn btn-default" id="tryOutManualSchedule">
+                    <i class="fas fa-step-forward"></i> 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="card" style="width: 100%;">
+      <div class="card-body">
+          <h4 class="card-title" data-toggle="collapse" data-target="#consoleSection" aria-expanded="false" aria-controls="consoleSection">
+            <i id="consoleSectionCollapseIndicator" class="fas fa-angle-right"></i>
+            Console
+          </h4>
+          <div class="card-text collapse" id="consoleSection">
+            <div id="console">
+            
+            </div>
+            <button type="button" class="btn btn-default" id="refreshConsole">
+                <i class="fas fa-sync"></i> 
+            </button>
+          </div>
+      </div>
+  </div>
+  
+  <div>
+    <span>Status of your settings: </span>
+    <i id="userSettingsSaved" class="fas fa-check-circle"></i>
+  
+    <div id="userSettingsError" style="display: none">
+      <i id="userSettingsError" class="fas fa-exclamation-triangle"></i>
+      <span id="errorMessage" class="bg-danger"></span>
+    </div>
+  </div>
+  
+  <div style="display:none" id="webhookRulesTemplate" class="delete-marker">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"><strong>Title</strong></div>
+        <div class="col-md-4">
+          <input name="title" type="text" class="form-control">
+        </div>
+        <div class="col-md-2"><label class="form-check-label">Active</label></div>
+        <div class="col-md-4">
+          <input name="enabled" type="checkbox" class="form-check-input position-static" value="true" checked="checked">
+        </div>
+      </div>
+      <fieldset class="form-group">
+        <legend>Receive webhook on</legend>
+        <div class="row">
+          <div class="col-md-2">Subpath</div>
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon">/webhooks/</span>
+              <input name="hookname" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Payload must match</div>
+          <div class="col-md-4"><input name="filterExpression" class="form-control"></div>
+          <div class="col-md-2">Expression type</div>
+          <div class="col-md-4">
+            <select name="filterExpressionType" class="form-control">
+              <option value="REGEXP">RegExp</option>
+              <option value="JSONPOINTER">JSON Pointer (RFC 6901)</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <legend>Process HTTP request</legend>
+        <div class="row">
+          <div class="col-md-2">Path to payload root for template</div>
+          <div class="col-md-4"><input name="payloadPath" type="text" class="form-control"></div>
+          <div class="col-md-2">Freemarker template</div>
+          <div class="col-md-4"><textarea rows="8" name="payloadTemplate" class="form-control"></textarea></div>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <legend>.. and send it to</legend>
+        <div class="row">
+          <div class="col-md-2">Method</div>
+          <div class="col-md-4">
+            <select name="endpoint.httpMethod" class="form-control">
+              <option value="PUT">PUT</option>
+              <option value="POST">POST</option>
+            </select>
+          </div>
+          <div class="col-md-2">URL</div>
+          <div class="col-md-4"><input name="endpoint.url" class="form-control"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Username</div>
+          <div class="col-md-4"><input name="endpoint.username" class="form-control"></div>
+          <div class="col-md-2">Password</div>
+          <div class="col-md-4"><input name="endpoint.password" type="password" class="form-control"></div>
+        </div>
+      </fieldset>
+      <div class="row">
+        <div class="col-md-11">&nbsp;</div>
+        <div class="col-md-1" style="text-align: right;">
+          <button type="button" class="btn btn-default remove-entry">
+            <i class="fas fa-minus-circle"></i> 
+          </button></div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="display:none" id="scheduledRulesTemplate" class="delete-marker">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"><strong>Title</strong></div>
+        <div class="col-md-4">
+          <input name="title" type="text" class="form-control">
+        </div>
+        <div class="col-md-2"><label class="form-check-label">Active</label></div>
+        <div class="col-md-4">
+          <input name="enabled" type="checkbox" class="form-check-input position-static" value="true" checked="checked">
+        </div>
+      </div>
+      <fieldset class="form-group">
+        <legend>Query a URL</legend>
+        <div class="row">
+          <div class="col-md-2"><a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html" target="_blank">CRON expression</a></div>
+          <div class="col-md-4"><input name="cronExpression" class="form-control"></div>
+          <div class="col-md-2">Query URL</div>
+          <div class="col-md-4"><input name="scheduledQueryEndpoint.url" class="form-control"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Username</div>
+          <div class="col-md-4"><input name="scheduledQueryEndpoint.username" class="form-control"></div>
+          <div class="col-md-2">Password</div>
+          <div class="col-md-4"><input name="scheduledQueryEndpoint.password" type="password" class="form-control"></div>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <legend>Process HTTP response</legend>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-4">Path to payload root for template</div>
+              <div class="col-md-8"><input name="payloadPath" type="text" class="form-control"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">Only send response if this path exists</div>
+              <div class="col-md-8"><input name="filterExpression" type="text" class="form-control"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">Expression type</div>
+              <div class="col-md-8">
+                <select name="filterExpressionType" class="form-control">
+                  <option value="REGEXP">RegExp</option>
+                  <option value="JSONPOINTER">JSON Pointer (RFC 6901)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">Freemarker template</div>
+          <div class="col-md-4"><textarea rows="8" name="payloadTemplate" class="form-control"></textarea></div>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <legend>.. and send it to</legend>
+        <div class="row">
+          <div class="col-md-2">Method</div>
+          <div class="col-md-4">
+            <select name="endpoint.httpMethod" class="form-control">
+              <option value="PUT">PUT</option>
+              <option value="POST">POST</option>
+            </select>
+          </div>
+          <div class="col-md-2">URL</div>
+          <div class="col-md-4"><input name="endpoint.url" class="form-control"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Username</div>
+          <div class="col-md-4"><input name="endpoint.username" class="form-control"></div>
+          <div class="col-md-2">Password</div>
+          <div class="col-md-4"><input name="endpoint.password" type="password" class="form-control"></div>
+        </div>
+      </fieldset>   
+      <div class="row">
+        <div class="col-md-11">&nbsp;</div>
+        <div class="col-md-1" style="text-align: right;">
+          <button type="button" class="btn btn-default remove-entry">
+            <i class="fas fa-minus-circle"></i> 
+          </button></div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer" style="text-align: right">
+    <div><span id="isthmus-version"></span>,&nbsp;<span>&copy; WaNT GmbH 2018</span></div>
+  </footer>
+  
+  <div style='display:none'>
+    <form id="stripeForm" method="POST" action="https://isthmus.want.ch/license.php">
+      <input name="stripeToken">
+      <input name="stripeEmail">
+      <input name="currency">
+    </form>
+  </div>
+</body>
+</html>

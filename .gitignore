@@ -1,0 +1,18 @@
+# Build files
+/target/
+.class
+!.mvn/wrapper/maven-wrapper.jar
+
+# Website
+/www/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+devtaskhub.log*

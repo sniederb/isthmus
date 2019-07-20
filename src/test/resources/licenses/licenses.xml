@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<licenseSummary>
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.9.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-webapp</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-yaml</artifactId>
+      <version>2.9.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-plus</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>6.2</version>
+      <licenses>
+        <license>
+          <name>BSD</name>
+          <url>http://asm.ow2.org/license.html</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>2.0.1.Final</version>
+      <licenses>
+        <license>
+          <name>Apache License 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>javax.websocket</groupId>
+      <artifactId>javax.websocket-api</artifactId>
+      <version>1.0</version>
+      <licenses>
+        <license>
+          <name>Dual license consisting of the CDDL v1.1 and GPL v2</name>
+          <url>https://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.0.10.Final</version>
+      <licenses>
+        <license>
+          <name>Apache License 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.5</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-client</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+      <licenses>
+        <license>
+          <name>Eclipse Public License - v 1.0</name>
+          <url>http://www.eclipse.org/legal/epl-v10.html</url>
+        </license>
+        <license>
+          <name>GNU Lesser General Public License</name>
+          <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
+      <version>3.3.2.Final</version>
+      <licenses>
+        <license>
+          <name>Apache License, version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jetty</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-websocket</artifactId>
+      <version>8.5.31</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>javax-websocket-client-impl</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>2.9.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-tree</artifactId>
+      <version>6.2</version>
+      <licenses>
+        <license>
+          <name>BSD</name>
+          <url>http://asm.ow2.org/license.html</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <licenses>
+        <license>
+          <name>CDDL + GPLv2 with classpath exception</name>
+          <url>https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html</url>
+          <distribution>repo</distribution>
+          <comments>A business-friendly OSS license</comments>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.7</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-xml</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-core</artifactId>
+      <version>8.5.31</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-freemarker</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml</groupId>
+      <artifactId>classmate</artifactId>
+      <version>1.3.4</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-el</artifactId>
+      <version>8.5.31</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.2.3</version>
+      <licenses>
+        <license>
+          <name>Eclipse Public License - v 1.0</name>
+          <url>http://www.eclipse.org/legal/epl-v10.html</url>
+        </license>
+        <license>
+          <name>GNU Lesser General Public License</name>
+          <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.mortbay.jasper</groupId>
+      <artifactId>apache-el</artifactId>
+      <version>8.5.24.2</version>
+      <licenses>
+        <license>
+          <name>Apache License Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>5.0.6.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+      <licenses>
+        <license>
+          <name>CDDL + GPLv2 with classpath exception</name>
+          <url>https://github.com/javaee/javax.annotation/blob/master/LICENSE</url>
+          <distribution>repo</distribution>
+          <comments>A business-friendly OSS license</comments>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-continuation</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.9.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-to-slf4j</artifactId>
+      <version>2.10.0</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-annotations</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.28</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>1.7.25</version>
+      <licenses>
+        <license>
+          <name>MIT License</name>
+          <url>http://www.opensource.org/licenses/mit-license.php</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>websocket-common</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+      <version>5.0.6.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.9.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-http</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>websocket-api</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlets</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>websocket-servlet</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-parameter-names</artifactId>
+      <version>2.9.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+      <licenses>
+        <license>
+          <name>MIT License</name>
+          <url>http://www.opensource.org/licenses/mit-license.php</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.11</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-io</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jcl</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>websocket-client</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>websocket-server</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.2</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.10.0</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-security</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>5.0.6.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-util</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-json</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>1.19</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jdk8</artifactId>
+      <version>2.9.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.4.9</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.websocket</groupId>
+      <artifactId>javax-websocket-server-impl</artifactId>
+      <version>9.4.11.v20180605</version>
+      <licenses>
+        <license>
+          <name>Apache Software License - Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+        <license>
+          <name>Eclipse Public License - Version 1.0</name>
+          <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-commons</artifactId>
+      <version>6.2</version>
+      <licenses>
+        <license>
+          <name>BSD</name>
+          <url>http://asm.ow2.org/license.html</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <version>2.0.3.RELEASE</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-analysis</artifactId>
+      <version>6.2</version>
+      <licenses>
+        <license>
+          <name>BSD</name>
+          <url>http://asm.ow2.org/license.html</url>
+        </license>
+      </licenses>
+    </dependency>
+  </dependencies>
+</licenseSummary>
