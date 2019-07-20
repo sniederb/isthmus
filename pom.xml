@@ -23,9 +23,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		
-		<junit.version>5.1.1</junit.version>
-		<junit.platform.version>1.1.0</junit.platform.version>
+
+		<junit.version>5.2.0</junit.version>
+		<junit.platform.version>1.2.0</junit.platform.version>
 	</properties>
 
 	<dependencies>
@@ -49,8 +49,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<!-- Exclude JUnit 4 from starter-test (and all other related test-starter, i.e
-			     those for security and project reactor -->
+			<!-- Exclude JUnit 4 from starter-test (and all other related test-starter, 
+				i.e those for security and project reactor -->
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
@@ -62,8 +62,8 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
-			<!-- Exclude JUnit 4 from starter-test (and all other related test-starter, i.e
-			     those for security and project reactor -->
+			<!-- Exclude JUnit 4 from starter-test (and all other related test-starter, 
+				i.e those for security and project reactor -->
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
@@ -76,7 +76,7 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
-		
+
 		<!-- HTTP Client -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -108,7 +108,7 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.2</version>
 		</dependency>
-		
+
 		<!-- Provide JUnit 5 API -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -116,80 +116,98 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<profiles>
-	    <profile>
-	    	<!-- If Junit5 is failing, you might need to select this profile as 'active' in Maven -> Select Maven Profile ... -->
-	        <id>eclipse</id>
-	        <dependencies>
-	            <dependency>
-	                <groupId>org.junit.jupiter</groupId>
-	                <artifactId>junit-jupiter-engine</artifactId>
-	            </dependency>
-	            <dependency>
-	                <groupId>org.junit.platform</groupId>
-	                <artifactId>junit-platform-launcher</artifactId>
-	            </dependency>
-	        </dependencies>
-	        <dependencyManagement>
-	            <dependencies>
-	                <dependency>
-	                    <groupId>org.junit.jupiter</groupId>
-	                    <artifactId>junit-jupiter-engine</artifactId>
-	                    <version>${junit.version}</version>
-	                    <scope>test</scope>
-	                </dependency>
-	                <dependency>
-	                    <groupId>org.junit.platform</groupId>
-	                    <artifactId>junit-platform-launcher</artifactId>
-	                    <version>1.1.1</version>
-	                    <scope>test</scope>
-	                </dependency>
-	            </dependencies>
-	        </dependencyManagement>
-	    </profile>
+		<profile>
+			<!-- If Junit5 is failing, you might need to select this profile as 'active' 
+				in Maven -> Select Maven Profile ... -->
+			<id>eclipse</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.junit.jupiter</groupId>
+					<artifactId>junit-jupiter-engine</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-launcher</artifactId>
+				</dependency>
+			</dependencies>
+			<dependencyManagement>
+				<dependencies>
+					<dependency>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter-engine</artifactId>
+						<version>${junit.version}</version>
+						<scope>test</scope>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-launcher</artifactId>
+						<version>${junit.platform.version}</version>
+						<scope>test</scope>
+					</dependency>
+				</dependencies>
+			</dependencyManagement>
+		</profile>
 	</profiles>
-	
+
 	<build>
-	    <resources>
-            <resource>
-			    <directory>src/main/resources</directory>
-			    <!-- The spring-boot-starter-parent pom redefines the standard ${} delimiter as @: -->
-			    <filtering>true</filtering>
-			    <includes>
-			        <include>**/isthmus.js</include>
-			    </includes>
-			</resource>
-			
+		<resources>
 			<resource>
-			    <directory>src/main/resources</directory>
-			    <filtering>false</filtering>
-			    <excludes>
-			        <exclude>**/isthmus.js</exclude>
-			    </excludes>
+				<directory>src/main/resources</directory>
+				<!-- The spring-boot-starter-parent pom redefines the standard ${} delimiter 
+					as @: -->
+				<filtering>true</filtering>
+				<includes>
+					<include>**/isthmus.js</include>
+				</includes>
 			</resource>
-        </resources>
+
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/isthmus.js</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-surefire-provider</artifactId>
+						<version>${junit.platform.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter-engine</artifactId>
+						<version>${junit.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>license-maven-plugin</artifactId>
 				<version>1.16</version>
-		        <executions>
-		          <execution>
-		            <id>download-licenses</id>
-		            <goals>
-		              <goal>download-licenses</goal>
-		            </goals>
-		            <configuration>
-		            	<licensesOutputFile>${project.basedir}/src/test/resources/licenses/licenses.xml</licensesOutputFile>
-		            	<excludedScopes>test</excludedScopes>
-		            </configuration>
-		          </execution>
-		        </executions>
+				<executions>
+					<execution>
+						<id>download-licenses</id>
+						<goals>
+							<goal>download-licenses</goal>
+						</goals>
+						<configuration>
+							<licensesOutputFile>${project.basedir}/src/test/resources/licenses/licenses.xml</licensesOutputFile>
+							<excludedScopes>test</excludedScopes>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
