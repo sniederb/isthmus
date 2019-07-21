@@ -23,27 +23,23 @@ public class UserProperties {
     private List<ScheduledRule> scheduledRules = new ArrayList<>();
 
     public void copyFrom(final UserProperties otherProperties) {
-        this.untouched = otherProperties.untouched;
-        this.licenseKey = otherProperties.licenseKey;
-        this.email = otherProperties.email;
-        this.username = otherProperties.username;
-        this.password = otherProperties.password;
-        this.webhookRules.clear();
-        this.webhookRules.addAll(otherProperties.webhookRules);
-        this.scheduledRules.clear();
-        this.scheduledRules.addAll(otherProperties.scheduledRules);
+        copy(otherProperties, this);
     }
 
     public void copyTo(final UserProperties otherProperties) {
-        otherProperties.untouched = this.untouched;
-        otherProperties.licenseKey = this.licenseKey;
-        otherProperties.email = this.email;
-        otherProperties.username = this.username;
-        otherProperties.password = this.password;
-        otherProperties.webhookRules.clear();
-        otherProperties.webhookRules.addAll(this.webhookRules);
-        otherProperties.scheduledRules.clear();
-        otherProperties.scheduledRules.addAll(this.scheduledRules);
+        copy(this, otherProperties);
+    }
+
+    private static void copy(final UserProperties source, final UserProperties target) {
+        target.untouched = source.untouched;
+        target.licenseKey = source.licenseKey;
+        target.email = source.email;
+        target.username = source.username;
+        target.password = source.password;
+        target.webhookRules.clear();
+        target.webhookRules.addAll(source.webhookRules);
+        target.scheduledRules.clear();
+        target.scheduledRules.addAll(source.scheduledRules);
     }
 
     public String getEmail() {

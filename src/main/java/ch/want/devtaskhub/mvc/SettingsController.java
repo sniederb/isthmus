@@ -8,11 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.want.devtaskhub.licensing.LicenseClient;
@@ -22,7 +22,7 @@ import ch.want.devtaskhub.state.UserProperties;
 import ch.want.devtaskhub.state.UserPropertiesManager;
 
 @RestController
-public class HubSettingsController {
+public class SettingsController {
 
     @Autowired
     private UserProperties userProperties;
@@ -35,12 +35,12 @@ public class HubSettingsController {
     @Autowired
     private LicenseClient licenseClient;
 
-    @RequestMapping(value = "/settings", method = { RequestMethod.GET }, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("/settings")
     public UserProperties getSettings() {
         return userProperties;
     }
 
-    @RequestMapping(value = "/settings", method = { RequestMethod.PUT })
+    @PutMapping("/settings")
     public Map<String, Object> saveSettings(@RequestBody final UserProperties properties) {
         properties.validate();
         userProperties.copyFrom(properties);
@@ -50,14 +50,14 @@ public class HubSettingsController {
         return response;
     }
 
-    @RequestMapping(value = "/console", method = { RequestMethod.GET })
+    @GetMapping("/console")
     public Map<String, Object> console() {
         final Map<String, Object> response = new HashMap<>();
         response.put("console", this.applicationState.getLastActions());
         return response;
     }
 
-    @RequestMapping(value = "/license", method = { RequestMethod.GET })
+    @GetMapping("/license")
     public Map<String, Object> getLicenseStatus() throws IOException {
         final Map<String, Object> response = new HashMap<>();
         if (licenseClient.checkCurrentLicenseKey()) {
@@ -67,7 +67,7 @@ public class HubSettingsController {
         throw new IllegalArgumentException("Invalid license");
     }
 
-    @RequestMapping(value = "/triggercron/{ruleIndex}", method = { RequestMethod.POST })
+    @PostMapping("/triggercron/{ruleIndex}")
     public Map<String, Object> triggerCronRule(@PathVariable final int ruleIndex) {
         applicationState.addAction("Forcing start of scheduled rule index " + ruleIndex);
         scheduleEngine.forceRun(ruleIndex);

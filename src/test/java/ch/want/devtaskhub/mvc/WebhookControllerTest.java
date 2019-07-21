@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.nio.charset.Charset;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +35,6 @@ public class WebhookControllerTest extends AbstractSpringConfiguredTest {
     @BeforeEach
     public void resetLastExchangeBody() {
         RestClientStub.resetLastExchange();
-    }
-
-    @AfterEach
-    public void removeWebhookRule() {
-        userProperties.getWebhookRules().removeIf(r -> HOOKNAME.equals(r.getHookname()));
     }
 
     @Test

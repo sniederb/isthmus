@@ -12,6 +12,7 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import ch.want.devtaskhub.common.RestClient;
 import ch.want.devtaskhub.common.RestClientFactory;
@@ -46,38 +47,16 @@ public class DevtaskhubApplication {
     }
 
     @Bean
+    public FreeMarkerConfigurer freeMarkerConfigurer() {
+        final FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
+        // prevent auto-configured attempt to load pre-defined templates
+        configurer.setTemplateLoaderPaths();
+        return configurer;
+    }
+
+    @Bean
     public TaskScheduler taskScheduler() {
         return new ConcurrentTaskScheduler(); // single threaded by default
-    }
-
-    @Bean
-    @Profile("!test")
-    public UserPropertiesManager userPropertiesManager() {
-        return new UserPropertiesManager();
-    }
-
-    @Bean
-    @Profile("test")
-    public UserPropertiesManager testUserPropertiesManager() {
-        return new UserPropertiesManager(false);
-    }
-
-    @Bean
-    @Profile("!test")
-    @Autowired
-    public LicenseClient licenseClient(final UserPropertiesManager userPropertiesManager) {
-        final LicenseClient licenseClient = new LicenseClient();
-        userPropertiesManager.addObserver(licenseClient);
-        return licenseClient;
-    }
-
-    @Bean
-    @Profile("test")
-    @Autowired
-    public LicenseClient testLicenseClient(final UserPropertiesManager userPropertiesManager) {
-        final LicenseClient licenseClient = new LicenseClient(false);
-        userPropertiesManager.addObserver(licenseClient);
-        return licenseClient;
     }
 
     @Bean
@@ -88,15 +67,52 @@ public class DevtaskhubApplication {
         return scheduleEngine;
     }
 
-    @Bean
     @Profile("!test")
-    public RestClientFactory productiveRestClientFactory() {
-        return new RestClientFactory(RestClient.class.getName());
+    static class ProductionConfiguration {
+
+        @Bean
+        public UserPropertiesManager userPropertiesManager() {
+            return new UserPropertiesManager(true);
+        }
+
+        @Bean
+        public RestClientFactory restClientFactory() {
+            return new RestClientFactory(RestClient.class.getName());
+        }
     }
 
-    @Bean
     @Profile("test")
-    public RestClientFactory testRestClientFactory() {
-        return new RestClientFactory("ch.want.devtaskhub.ruleengine.RestClientStub");
+    static class TestConfiguration {
+
+        @Bean
+        public UserPropertiesManager userPropertiesManager() {
+            return new UserPropertiesManager(false);
+        }
+
+        @Bean
+        public RestClientFactory restClientFactory() {
+            return new RestClientFactory("ch.want.devtaskhub.ruleengine.RestClientStub");
+        }
+    }
+
+    static class LicenseClientConfiguration {
+
+        @Bean
+        @Profile("!test")
+        @Autowired
+        public LicenseClient productiveLicenseClient(final UserPropertiesManager userPropertiesManager) {
+            final LicenseClient licenseClient = new LicenseClient();
+            userPropertiesManager.addObserver(licenseClient);
+            return licenseClient;
+        }
+
+        @Bean
+        @Profile("test")
+        @Autowired
+        public LicenseClient testLicenseClient(final UserPropertiesManager userPropertiesManager) {
+            final LicenseClient licenseClient = new LicenseClient(false);
+            userPropertiesManager.addObserver(licenseClient);
+            return licenseClient;
+        }
     }
 }

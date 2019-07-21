@@ -9,8 +9,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.nio.charset.Charset;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -21,9 +19,8 @@ import org.springframework.util.StreamUtils;
 import ch.want.devtaskhub.AbstractSpringConfiguredTest;
 import ch.want.devtaskhub.state.ApplicationState;
 import ch.want.devtaskhub.state.UserProperties;
-import ch.want.devtaskhub.state.UserPropertiesManager;
 
-public class HubSettingsControllerTest extends AbstractSpringConfiguredTest {
+public class SettingsControllerTest extends AbstractSpringConfiguredTest {
 
     @Autowired
     private MockMvc mvc;
@@ -31,21 +28,6 @@ public class HubSettingsControllerTest extends AbstractSpringConfiguredTest {
     private ApplicationState applicationState;
     @Autowired
     private UserProperties userProperties;
-    @Autowired
-    private UserPropertiesManager userPropertiesManager;
-    private UserProperties userPropertiesBackup;
-
-    @BeforeEach
-    public void rememberSettings() {
-        userPropertiesBackup = new UserProperties();
-        userProperties.copyTo(userPropertiesBackup);
-    }
-
-    @AfterEach
-    public void resetSettings() {
-        userProperties.copyFrom(userPropertiesBackup);
-        userPropertiesManager.writePropertiesToFile();
-    }
 
     @Test
     public void getSettings_noAuthentication() throws Exception {

@@ -1,6 +1,8 @@
+# debug: true
+
 spring:
   profiles:
-    active: workspace
+    active: test,workspace
     
 internal:
   userproperties-path: classpath:settings/devtaskhub.yml
