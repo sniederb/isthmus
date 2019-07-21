@@ -4,8 +4,11 @@
 package ch.want.devtaskhub;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,8 +18,10 @@ import ch.want.devtaskhub.state.UserProperties;
 
 @Configuration
 @EnableWebSecurity
+@DependsOn("userPropertiesManager")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final Logger LOG = LoggerFactory.getLogger(WebSecurityConfig.class);
     @Autowired
     private UserProperties userProperties;
 
@@ -26,6 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/assets/**", "/webhooks/**")
                 .permitAll();
         if (StringUtils.isNoneBlank(userProperties.getUsername(), userProperties.getPassword())) {
+            LOG.info("Enabling security for {}", userProperties.getUsername());
             http
                     .antMatcher("/*")
                     .authorizeRequests()
