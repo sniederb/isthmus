@@ -16,6 +16,8 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import ch.want.devtaskhub.common.RestClient;
 import ch.want.devtaskhub.common.RestClientFactory;
+import ch.want.devtaskhub.licensing.LicenseClient;
+import ch.want.devtaskhub.licensing.SimpleLicenseClient;
 import ch.want.devtaskhub.ruleengine.ScheduleEngine;
 import ch.want.devtaskhub.state.UserPropertiesManager;
 
@@ -70,8 +72,11 @@ public class DevtaskhubApplication {
     static class ProductionConfiguration {
 
         @Bean
-        public UserPropertiesManager userPropertiesManager() {
-            return new UserPropertiesManager(true);
+        @Autowired
+        public UserPropertiesManager userPropertiesManager(final LicenseClient licenseClient) {
+            final UserPropertiesManager userPropertiesManager = new UserPropertiesManager(false);
+            userPropertiesManager.addObserver(licenseClient);
+            return userPropertiesManager;
         }
 
         @Bean
@@ -80,17 +85,25 @@ public class DevtaskhubApplication {
         }
     }
 
-    @Profile("test")
+    @Profile({ "test", "workspace" })
     static class TestConfiguration {
 
         @Bean
-        public UserPropertiesManager userPropertiesManager() {
-            return new UserPropertiesManager(false);
+        @Autowired
+        public UserPropertiesManager userPropertiesManager(final LicenseClient licenseClient) {
+            final UserPropertiesManager userPropertiesManager = new UserPropertiesManager(false);
+            userPropertiesManager.addObserver(licenseClient);
+            return userPropertiesManager;
         }
 
         @Bean
         public RestClientFactory restClientFactory() {
             return new RestClientFactory("ch.want.devtaskhub.ruleengine.RestClientStub");
+        }
+
+        @Bean
+        public LicenseClient licenseClient() {
+            return new SimpleLicenseClient();
         }
     }
 }
