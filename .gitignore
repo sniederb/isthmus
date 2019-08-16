@@ -6,6 +6,11 @@
 # Website
 /www/
 
+# Licensing stuff
+LicenseClientConfiguration.java
+LicenseClientImpl.java
+LicenseClientImplTest.java
+
 ### STS ###
 .apt_generated
 .classpath
@@ -16,3 +21,4 @@
 .sts4-cache
 
 devtaskhub.log*
+
