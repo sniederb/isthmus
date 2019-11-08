@@ -1,6 +1,3 @@
-/*
- * Created on 18 Jul 2018
- */
 package ch.want.devtaskhub;
 
 import org.junit.jupiter.api.BeforeEach;

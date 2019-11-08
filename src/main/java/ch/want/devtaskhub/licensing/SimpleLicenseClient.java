@@ -1,6 +1,3 @@
-/*
- * Created on 16.08.2019
- */
 package ch.want.devtaskhub.licensing;
 
 import java.util.Observable;

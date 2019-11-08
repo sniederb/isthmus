@@ -1,6 +1,3 @@
-/*
- * Created on 27 Jul 2018
- */
 package ch.want.devtaskhub.ruleengine;
 
 import static org.junit.jupiter.api.Assertions.*;

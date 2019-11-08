@@ -1,6 +1,3 @@
-/*
- * Created on 20 Jul 2018
- */
 package ch.want.devtaskhub;
 
 import org.springframework.boot.system.ApplicationHome;

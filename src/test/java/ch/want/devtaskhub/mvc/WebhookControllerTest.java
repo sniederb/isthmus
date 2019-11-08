@@ -1,6 +1,3 @@
-/*
- * Created on 18 Jul 2018
- */
 package ch.want.devtaskhub.mvc;
 
 import static org.junit.jupiter.api.Assertions.*;
