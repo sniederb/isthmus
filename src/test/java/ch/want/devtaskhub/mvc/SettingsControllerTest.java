@@ -17,7 +17,7 @@ import ch.want.devtaskhub.AbstractSpringConfiguredTest;
 import ch.want.devtaskhub.state.ApplicationState;
 import ch.want.devtaskhub.state.UserProperties;
 
-public class SettingsControllerTest extends AbstractSpringConfiguredTest {
+class SettingsControllerTest extends AbstractSpringConfiguredTest {
 
     @Autowired
     private MockMvc mvc;
@@ -27,14 +27,14 @@ public class SettingsControllerTest extends AbstractSpringConfiguredTest {
     private UserProperties userProperties;
 
     @Test
-    public void getSettings_noAuthentication() throws Exception {
+    void getSettings_noAuthentication() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/settings")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is4xxClientError());
     }
 
     @Test
-    public void getSettings() throws Exception {
+    void getSettings() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/settings")
                 .with(httpBasic(userProperties.getUsername(), userProperties.getPassword()))
                 .accept(MediaType.APPLICATION_JSON))
@@ -43,7 +43,7 @@ public class SettingsControllerTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void saveSettings() throws Exception {
+    void saveSettings() throws Exception {
         final String payload = StreamUtils.copyToString(this.getClass().getResourceAsStream("/settings/settings-request-from-webclient.json"),
                 Charset.forName("UTF-8"));
         mvc.perform(MockMvcRequestBuilders.put("/settings")
@@ -55,7 +55,7 @@ public class SettingsControllerTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void license() throws Exception {
+    void license() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/license")
                 .with(httpBasic(userProperties.getUsername(), userProperties.getPassword()))
                 .accept(MediaType.APPLICATION_JSON))
@@ -64,7 +64,7 @@ public class SettingsControllerTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void console() throws Exception {
+    void console() throws Exception {
         applicationState.addAction("Running JUnit tests");
         mvc.perform(MockMvcRequestBuilders.get("/console")
                 .with(httpBasic(userProperties.getUsername(), userProperties.getPassword()))

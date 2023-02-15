@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import ch.want.devtaskhub.AbstractSpringConfiguredTest;
 
-public class ApplicationPropertiesTest extends AbstractSpringConfiguredTest {
+class ApplicationPropertiesTest extends AbstractSpringConfiguredTest {
 
     @Autowired
     private ApplicationProperties testee;
 
     @Test
-    public void getUserpropertiesPath_notNull() throws Exception {
+    void getUserpropertiesPath_notNull() throws Exception {
         assertNotNull(testee.getUserpropertiesPath());
     }
 }

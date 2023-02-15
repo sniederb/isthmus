@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import ch.want.devtaskhub.AbstractSpringConfiguredTest;
 
-public class UserPropertiesManagerTest extends AbstractSpringConfiguredTest {
+class UserPropertiesManagerTest extends AbstractSpringConfiguredTest {
 
     @Autowired
     private UserProperties userProperties;
@@ -15,12 +15,12 @@ public class UserPropertiesManagerTest extends AbstractSpringConfiguredTest {
     private UserPropertiesManager userPropertiesManager;
 
     @Test
-    public void postConstruct() {
+    void postConstruct() {
         assertEquals("123456", userProperties.getLicenseKey());
     }
 
     @Test
-    public void writePropertiesToFile() {
+    void writePropertiesToFile() {
         userProperties.setLicenseKey("123456");
         userPropertiesManager.writePropertiesToFile();
     }

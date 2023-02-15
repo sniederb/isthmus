@@ -21,7 +21,7 @@ import ch.want.devtaskhub.state.Endpoint;
 import ch.want.devtaskhub.state.UserProperties;
 import ch.want.devtaskhub.state.WebhookRule;
 
-public class WebhookControllerTest extends AbstractSpringConfiguredTest {
+class WebhookControllerTest extends AbstractSpringConfiguredTest {
 
     private static final String HOOKNAME = "junittest";
     @Autowired
@@ -30,12 +30,12 @@ public class WebhookControllerTest extends AbstractSpringConfiguredTest {
     private UserProperties userProperties;
 
     @BeforeEach
-    public void resetLastExchangeBody() {
+    void resetLastExchangeBody() {
         RestClientStub.resetLastExchange();
     }
 
     @Test
-    public void onIncomingWebhook() throws Exception {
+    void onIncomingWebhook() throws Exception {
         final WebhookRule rule = addWebhookRule();
         rule.setPayloadPath("/build");
         rule.setPayloadTemplate("{\"jobStatus\":\"${status}\"}");

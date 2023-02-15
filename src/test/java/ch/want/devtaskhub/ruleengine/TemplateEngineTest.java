@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ch.want.devtaskhub.AbstractSpringConfiguredTest;
 
-public class TemplateEngineTest extends AbstractSpringConfiguredTest {
+class TemplateEngineTest extends AbstractSpringConfiguredTest {
 
     @Autowired
     private TemplateEngine testee;
@@ -26,7 +26,7 @@ public class TemplateEngineTest extends AbstractSpringConfiguredTest {
     private ObjectMapper objectMapper;
 
     @Test
-    public void render_jsonStylePayload() throws Exception {
+    void render_jsonStylePayload() throws Exception {
         // arrange
         final Map<String, Object> payloadModel = new HashMap<>();
         payloadModel.put("title", "Hello World");
@@ -38,7 +38,7 @@ public class TemplateEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void render_regExpStylePayload() throws Exception {
+    void render_regExpStylePayload() throws Exception {
         // arrange
         final Map<String, Object> payloadModel = new HashMap<>();
         payloadModel.put("group1", "JIRA-155");
@@ -50,7 +50,7 @@ public class TemplateEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void render_jiraResponse() throws Exception {
+    void render_jiraResponse() throws Exception {
         final String payload = StreamUtils.copyToString(this.getClass().getResourceAsStream("/ch/want/devtaskhub/jira/search-issues-response.json"),
                 Charset.forName("UTF-8"));
         final String template = StreamUtils.copyToString(this.getClass().getResourceAsStream("/ch/want/devtaskhub/slack/list_of_issues.freemarker.template"),

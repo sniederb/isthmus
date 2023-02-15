@@ -21,7 +21,7 @@ import ch.want.devtaskhub.state.FilterExpressionType;
 import ch.want.devtaskhub.state.UserProperties;
 import ch.want.devtaskhub.state.WebhookRule;
 
-public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
+class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
 
     private static final String HOOKNAME = "junittest";
     @Autowired
@@ -32,12 +32,12 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     private ObjectMapper objectMapper;
 
     @BeforeEach
-    public void resetLastExchangeBody() {
+    void resetLastExchangeBody() {
         RestClientStub.resetLastExchange();
     }
 
     @Test
-    public void process_regExpMismatch() throws IOException {
+    void process_regExpMismatch() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setFilterExpressionType(FilterExpressionType.REGEXP);
@@ -48,7 +48,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_regExpMatch() throws IOException {
+    void process_regExpMatch() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setFilterExpressionType(FilterExpressionType.REGEXP);
@@ -62,7 +62,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_jsonPointerMisMatch() throws IOException {
+    void process_jsonPointerMisMatch() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setFilterExpressionType(FilterExpressionType.JSONPOINTER);
@@ -73,7 +73,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_jsonPointerMatch() throws IOException {
+    void process_jsonPointerMatch() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setFilterExpressionType(FilterExpressionType.JSONPOINTER);
@@ -87,7 +87,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_jenkinsUpdate() throws IOException {
+    void process_jenkinsUpdate() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setFilterExpressionType(FilterExpressionType.JSONPOINTER);
@@ -103,7 +103,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_usingSubPath() throws IOException {
+    void process_usingSubPath() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setPayloadPath("/nested");
@@ -117,7 +117,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_usingArrayPath() throws IOException {
+    void process_usingArrayPath() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setPayloadPath("/elements");
@@ -131,7 +131,7 @@ public class WebhookRuleEngineTest extends AbstractSpringConfiguredTest {
     }
 
     @Test
-    public void process_gitUpdateUsingRegExpPath() throws IOException {
+    void process_gitUpdateUsingRegExpPath() throws IOException {
         // arrange
         final WebhookRule rule = addWebhookRule();
         rule.setFilterExpressionType(FilterExpressionType.REGEXP);

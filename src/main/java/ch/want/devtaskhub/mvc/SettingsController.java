@@ -1,6 +1,5 @@
 package ch.want.devtaskhub.mvc;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,7 +54,7 @@ public class SettingsController {
     }
 
     @GetMapping("/license")
-    public Map<String, Object> getLicenseStatus() throws IOException {
+    public Map<String, Object> getLicenseStatus() {
         final Map<String, Object> response = new HashMap<>();
         if (licenseClient.checkCurrentLicenseKey()) {
             response.put("message", "Ok");

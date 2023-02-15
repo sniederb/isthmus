@@ -2,10 +2,10 @@ package ch.want.devtaskhub;
 
 import org.junit.jupiter.api.Test;
 
-public class DevtaskhubApplicationTest extends AbstractSpringConfiguredTest {
+class DevtaskhubApplicationTest extends AbstractSpringConfiguredTest {
 
     @Test
-    public void contextLoads() {
+    void contextLoads() {
         // check if Spring context starts
     }
 }

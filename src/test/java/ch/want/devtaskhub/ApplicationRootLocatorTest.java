@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class ApplicationRootLocatorTest extends AbstractSpringConfiguredTest {
+class ApplicationRootLocatorTest extends AbstractSpringConfiguredTest {
 
     @Test
-    public void getPropertyValue() {
+    void getPropertyValue() {
         final String appRoot = new ApplicationRootLocator().getPropertyValue();
         assertNotNull(appRoot);
     }

@@ -26,7 +26,7 @@ public abstract class AbstractSpringConfiguredTest {
     private UserPropertiesManager userPropertiesManager;
 
     @BeforeEach
-    public void resetSettings() {
+    void resetSettings() {
         final UserProperties defaultUserProperties = getDefaultUserProperties();
         userProperties.copyFrom(defaultUserProperties);
         userPropertiesManager.writePropertiesToFile();

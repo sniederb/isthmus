@@ -35,10 +35,10 @@ import org.springframework.util.StreamUtils;
  *
  * @see https://tldrlegal.com/
  */
-public class ThirdPartyLicenseTest {
+class ThirdPartyLicenseTest {
 
     @Test
-    public void thirdPartyLicenses_commercialAllowed() throws Exception {
+    void thirdPartyLicenses_commercialAllowed() throws Exception {
         final Map<String, String> licenses = getLicensePerArtefact();
         // assert
         assertNotNull(licenses);

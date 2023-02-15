@@ -28,10 +28,10 @@ import ch.want.devtaskhub.state.UserPropertiesManager;
 @EnableAutoConfiguration
 @EnableScheduling
 @ComponentScan(basePackages = { //
-        "ch.want.devtaskhub", //
-        "ch.want.devtaskhub.mvc", //
-        "ch.want.devtaskhub.ruleengine", //
-        "ch.want.devtaskhub.licensing"
+    "ch.want.devtaskhub", //
+    "ch.want.devtaskhub.mvc", //
+    "ch.want.devtaskhub.ruleengine", //
+    "ch.want.devtaskhub.licensing"
 })
 public class DevtaskhubApplication {
 
@@ -42,9 +42,9 @@ public class DevtaskhubApplication {
     @Bean
     public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {
         return restTemplateBuilder
-                .setConnectTimeout(20 * 1000)
-                .setReadTimeout(20 * 1000)
-                .build();
+            .setConnectTimeout(20 * 1000)
+            .setReadTimeout(20 * 1000)
+            .build();
     }
 
     @Bean
@@ -83,6 +83,7 @@ public class DevtaskhubApplication {
         public RestClientFactory restClientFactory() {
             return new RestClientFactory(RestClient.class.getName());
         }
+        // need to setup a LicenseClient somehow, somewhere
     }
 
     @Profile({ "test", "workspace" })
